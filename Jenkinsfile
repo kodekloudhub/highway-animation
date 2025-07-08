@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    NAME = "solar-system"
+    NAME = "highway-animation"
     VERSION = "${env.BUILD_ID}-${env.GIT_COMMIT}"
     IMAGE_REPO = "siddharth67"
     GITEA_TOKEN = credentials('gitea-token')

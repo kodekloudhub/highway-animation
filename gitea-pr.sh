@@ -13,7 +13,7 @@ curl -X 'POST' \
   "base": "main",
   "body": "Updated deployment specification with a new image version.",
   "head": "feature-gitea",
-  "title": "Updated Solar System Image"
+  "title": "Updated background"
 }'
 
 echo "Success"

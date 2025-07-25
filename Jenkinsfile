@@ -53,8 +53,10 @@ pipeline {
     stage('Update Manifest') {
       steps {
         dir("cgoa-demos/jenkins-demo") {
-          sh 'sed -i "s#siddharth67.*#${IMAGE_REPO}/${NAME}:${VERSION}#g" deployment.yaml'
-          sh 'cat deployment.yaml'
+          script {
+              sh "sed -i \"s#\\(image:\\s*\\).*#\\1${IMAGE_REPO}/${NAME}:${VERSION}#g\" deployment.yml"
+              sh "cat deployment.yml"
+          }
         }
       }
     }

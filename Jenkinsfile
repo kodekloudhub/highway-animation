@@ -44,7 +44,7 @@ pipeline {
 
           } else {
             echo 'Repo does not exists - Cloning the repo'
-            sh 'git clone -b feature-gitea http://139.59.21.103:3000/siddharth/cgoa-demos'
+            sh 'git clone -b feature-gitea https://3000-port-ot7bvscbcueb36tz.kodekloud.com/kk-org/cgoa-demos.git'
           }
         }
       }
@@ -65,7 +65,7 @@ pipeline {
       steps {
         dir("cgoa-demos/jenkins-demo") {
           sh "git config --global user.email 'jenkins@ci.com'"
-          sh 'git remote set-url origin http://$GITEA_TOKEN@139.59.21.103:3000/siddharth/cgoa-demos'
+          sh 'git remote set-url origin https://$GITEA_TOKEN@3000-port-ot7bvscbcueb36tz.kodekloud.com/kk-org/cgoa-demos.git'
           sh 'git checkout feature-gitea'
           sh 'git add -A'
           sh 'git commit -am "Updated image version for Build - $VERSION"'
